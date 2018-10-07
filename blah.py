@@ -1,5 +1,6 @@
 import twitter
 from itertools import cycle
+import base64
 
 def bal(key):
     keylength = len(key)
@@ -38,6 +39,8 @@ key = bytearray("***************")
 l = bal(key)
 text = 'TEST'
 blah = ''.join(chr(ord(c)^d) for c,d in zip(text,cycle(l)))
-print(blah)
+blah = base64.b64encode(blah)
 status = api.PostUpdate(blah)
-print(status.text)
+
+
+
