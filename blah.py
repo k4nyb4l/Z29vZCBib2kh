@@ -34,11 +34,13 @@ api = twitter.Api(consumer_key='************',
                 access_token_key='**********',
                 access_token_secret='*********')
 
-key = bytearray("ECW{78904c28d75bf678385eba4e6da4f271}")
+key = bytearray("***************")
 
 l = bal(key)
 text = 'TEST'
 blah = ''.join(chr(ord(c)^d) for c,d in zip(text,cycle(l)))
 blah = base64.b64encode(blah)
 status = api.PostUpdate(blah)
-print(status.text)
+
+
+
